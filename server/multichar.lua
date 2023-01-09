@@ -39,6 +39,8 @@ function syncPlayer()
                     for k, v in pairs(Users) do
                         if v.owner == ident then
                             senddata["unique"] = v.id
+                        else
+                            return
                         end
                     end
                 else
@@ -72,6 +74,8 @@ function syncPlayer()
                         for _, y in pairs(Users) do
                             if y.owner == ident then
                                 senddata["unique"] = y.id
+                            else
+                                return
                             end
                         end
                     else

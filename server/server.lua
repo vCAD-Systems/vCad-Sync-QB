@@ -50,7 +50,10 @@ function repetitions()
             for _, v in pairs(rs) do
                 local CharInfo = json.decode(v.charinfo)
                 local Skin = MySQL.prepare.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', { v.citizenid, 1 })
-                table.insert(Users, {id = v.id or nil, owner = v.citizenid, firstname = CharInfo.firstname, lastname = CharInfo.lastname, phone = CharInfo.phone or nil, aliases = v[Config.CharSync.Aliases] or nil, skin = Skin.skin})
+
+                if Skin ~= nil then
+                    table.insert(Users, {id = v.id or nil, owner = v.citizenid, firstname = CharInfo.firstname, lastname = CharInfo.lastname, phone = CharInfo.phone or nil, aliases = v[Config.CharSync.Aliases] or nil, skin = Skin.skin})
+                end
             end
         end)
         
