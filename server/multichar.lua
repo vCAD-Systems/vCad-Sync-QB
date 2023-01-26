@@ -27,6 +27,14 @@ function syncPlayer()
             end
             name = xPlayer.PlayerData.charinfo.firstname..' '..xPlayer.PlayerData.charinfo.lastname
             gender = xPlayer.PlayerData.charinfo.gender
+
+            if gender == 0 then
+                gender = "Männlich"
+            elseif gender == 1 then
+                gender = "Weiblich"
+            elseif gender == 2 then
+                gender = "Divers"
+            end
             --size = 'UNAVAILABLE' -- not available in QB
             dob = xPlayer.PlayerData.charinfo.birthdate
             local header = {}
