@@ -71,12 +71,11 @@ function repetitions()
             MySQL.query("SELECT * FROM player_vehicles", function(rs)
                 if Config.Vehicle.HU_spalte ~= nil or Config.Vehicle.HU_spalte ~= 'nil' then
                     for _, v in pairs(rs) do
-                        print(v)
-                        table.insert(Owned_Vehicles, {id = v.id, owner = v.citizenid, vehicle = v})
+                        table.insert(Owned_Vehicles, {id = v.id, owner = v.citizenid, vehicle = v, HU = v[Config.Vehicle.HU_spalte]})
                     end
                 else
                     for _, v in pairs(rs) do
-                        table.insert(Owned_Vehicles, {id = v.id, owner = v.citizenid, vehicle = v, HU = v[Config.Vehicle.HU_spalte]})
+                        table.insert(Owned_Vehicles, {id = v.id, owner = v.citizenid, vehicle = v})
                     end
                 end
                 if Config.Debug then
