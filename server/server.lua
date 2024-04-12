@@ -27,7 +27,7 @@ AddEventHandler('onResourceStart', function(resourceName)
 
         if Config.Vehicle.Activated then
             MySQL.query("SELECT * FROM player_vehicles", function(rs)
-                if rs[1].id == nil then
+                if rs[1] ~= nil and rs[1].id == nil then
                     MySQL.query("ALTER TABLE `player_vehicles` ADD `id` BIGINT NOT NULL AUTO_INCREMENT FIRST, ADD UNIQUE (`id`)")
                 end
             end)
