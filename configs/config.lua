@@ -41,7 +41,7 @@ Config.CharSync = {
         Deaktiviert: false
         Aktivieren: true
     ]]
-    HairColor = true,
+    HairColor = false, -- AKTUELL NICHT SUPPORTED!!
 
     --[[
         Wollt Ihr das die Aktuellen Augenfarbe in der Akte eingetragen wird?
@@ -49,7 +49,7 @@ Config.CharSync = {
         Deaktiviert: false
         Aktivieren: true
     ]]
-    EyeColor = true,
+    EyeColor = false, -- AKTUELL NICHT SUPPORTED!!
 
     --[[
         Ihr habt bereits eine Spalte mit AUTO_INCREMENT, und diese Spalte ist als UNIQUE Makiert, screibt sie statt nil in Anführungszeichen (") bei Id_Spalte rein.
