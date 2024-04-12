@@ -47,9 +47,13 @@ function syncPlayer()
                     for k, v in pairs(Users) do
                         if v.owner == ident then
                             senddata["unique"] = v.id
-                        else
-                            return
+                            break
                         end
+                    end
+
+                    if (senddata["unique"] == nil) then
+                        print("[vCAD][CharSync] No User found with Citizenid (" .. ident .. ")!")
+                        return
                     end
                 else
                     senddata["unique"] = ident
@@ -82,9 +86,13 @@ function syncPlayer()
                         for _, y in pairs(Users) do
                             if y.owner == ident then
                                 senddata["unique"] = y.id
-                            else
-                                return
+                                break
                             end
+                        end
+
+                        if (senddata["unique"] == nil) then
+                            print("[vCAD][CharSync] No User found with Citizenid (" .. ident .. ")!")
+                            return
                         end
                     else
                         senddata["unique"] = ident
